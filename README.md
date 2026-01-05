@@ -1,3 +1,3 @@
-Website files repository for XXXX course 
+Website files repository for course 
 
 Visit the site at: https://npetraco.github.io/709/
