@@ -19,7 +19,7 @@ m <- K-1              # cf. ENFSI doc pp.11 Table 2: The number of drug-containi
 n <- N-m
 
 # Assuming no negatives are observed (x=k), what must the sample size be to reach the stipulated minimum
-# confidence level that the fraction of drug-containing items in the seizure is greater then or 
+# confidence level if the fraction of drug-containing items in the seizure is greater then or 
 # equal to (i.e. at least) p.pos?
 
 # p-values and effective confidences:
