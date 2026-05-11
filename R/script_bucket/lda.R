@@ -1,8 +1,9 @@
-#Library which has LDA
-library(MASS)
-
-#Library for interactive 3D-plots
+library(frequtils)
+library(MASS) #Library which has LDA/CVA
 library(rgl) 
+
+
+
 
 #Navigate to the 5 tools toolmark data file and load it:
 tool.data <- read.csv(file.choose(), header=F)
