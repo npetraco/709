@@ -2,13 +2,10 @@ library(frequtils)
 library(MASS) #Library which has LDA/CVA
 library(rgl) 
 
+data("toolsim")
 
-
-
-#Navigate to the 5 tools toolmark data file and load it:
-tool.data <- read.csv(file.choose(), header=F)
-X.tool <- tool.data[,2:218]
-lbl.tool <- tool.data[,1]
+X.tool   <- tool[,2:ncol(toolsim)]
+lbl.tool <- tool[,1]
 
 #First let's start with PCA to get an "idea" what the data "looks like":
 pca.model<-prcomp(X.tool,center=TRUE,scale=FALSE)
@@ -67,4 +64,5 @@ cv.lbls<-lda.model$class
 (1-sum(as.numeric(cv.lbls)==as.numeric(lbl.tool))/length(lbl.tool))*100
 
 #If we got some wrong, which ones were they? (some quick and dirty R):
-cbind(1:50,as.numeric(cv.lbls)==as.numeric(lbl.tool), as.numeric(cv.lbls), as.numeric(lbl.tool))
+sameQ <- as.numeric(cv.lbls)==as.numeric(lbl.tool)
+data.frame(1:nrow(X.tool), lbl.tool, cv.lbls, sameQ)
